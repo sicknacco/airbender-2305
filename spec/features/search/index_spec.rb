@@ -10,6 +10,13 @@ RSpec.describe 'Search Index Page' do
 
       expect(current_path).to eq(search_path)
       expect(page).to have_content('Total Members: 97')
+      within('#members') do
+        expect(page).to have_content('Azula')
+        expect(page).to have_content(["Ozai", "Zuko "])
+        expect(page).to have_content(["Iroh", "Zuko", "Kuei", "Long Feng", "Mai", "Ty Lee", "Ursa "])
+        expect(page).to have_content("Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
+        expect(page).to have_content('Banished servant')
+      end
     end
   end
 end
