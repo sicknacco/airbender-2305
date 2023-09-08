@@ -1,7 +1,5 @@
 class AvatarService
   def self.nation_members(nation)
-    # get_url("/api/v1/characters?affiliation=#{nation}&perPage=20&page=#{page}")
-    # get_url("/api/v1/characters?page=#{page}&affiliation=#{nation}")
     get_url("/api/v1/characters?affiliation=#{nation}&perPage=150")
   end
 
