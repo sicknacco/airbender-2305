@@ -9,7 +9,7 @@ RSpec.describe 'Search Index Page' do
       click_button 'Search For Members'
 
       expect(current_path).to eq(search_path)
-      expect(page).to have_content('Total Members:')
+      expect(page).to have_content('Total Members: 97')
     end
   end
 end
