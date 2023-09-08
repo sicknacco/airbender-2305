@@ -9,6 +9,7 @@ RSpec.describe 'Search Index Page' do
       click_button 'Search For Members'
 
       expect(current_path).to eq(search_path)
+      expect(page).to have_content('Fire Nation')
       expect(page).to have_content('Total Members: 97')
       within('#members') do
         expect(page).to have_content('Azula')
@@ -16,6 +17,11 @@ RSpec.describe 'Search Index Page' do
         expect(page).to have_content(["Iroh", "Zuko", "Kuei", "Long Feng", "Mai", "Ty Lee", "Ursa "])
         expect(page).to have_content("Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
         expect(page).to have_content('Banished servant')
+        expect(page).to have_content('Name:').exactly(25).times
+        expect(page).to have_content('Photo:').exactly(25).times
+        expect(page).to have_content('Allies:').exactly(25).times
+        expect(page).to have_content('Enemies:').exactly(25).times
+        expect(page).to have_content('Affiliations:').exactly(25).times
       end
     end
   end
