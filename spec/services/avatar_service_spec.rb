@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe AvatarService do
   describe '#nation_members' do
     it 'returns a list of members of a nation', :vcr do
-      characters = AvatarService.nation_members('fire nation', 1)
-
+      characters = AvatarService.nation_members('fire nation')
       expect(characters).to be_an(Array)
       characters.each do |character|
         expect(character).to have_key(:_id)
